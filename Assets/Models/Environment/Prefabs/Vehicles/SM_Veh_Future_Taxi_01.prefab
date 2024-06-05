@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 23468492897425760}
   - component: {fileID: 64371053742774208}
   - component: {fileID: -8999594402772105756}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Future_Taxi_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4687654843425566}
   - component: {fileID: 33769649331813310}
   - component: {fileID: 23593299400561180}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Future_Taxi_01_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 4769805251128948}
   - component: {fileID: 33245743786140492}
   - component: {fileID: 23601789195207242}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Future_Taxi_01SteeringW
   m_TagString: Untagged
   m_Icon: {fileID: 0}

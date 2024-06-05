@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33573322789119926}
   - component: {fileID: 23565239101754876}
   - component: {fileID: 64358666033512526}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 4721138806385148}
   - component: {fileID: 33919278388009846}
   - component: {fileID: 23258235476049984}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_Brush_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4256682495495472}
   - component: {fileID: 33334604809583194}
   - component: {fileID: 23527576170678944}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_Brush_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 4673598288380934}
   - component: {fileID: 33348377866084222}
   - component: {fileID: 23759688247258946}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_01_Wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 4330195238584506}
   - component: {fileID: 33039890927276146}
   - component: {fileID: 23305945080067614}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_01_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 4037520641687020}
   - component: {fileID: 33068169784325468}
   - component: {fileID: 23305624272684942}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_01_Wheel_rr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 4602258499918696}
   - component: {fileID: 33160549269710084}
   - component: {fileID: 23218228672762770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_01_SteeringW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 4996645210162880}
   - component: {fileID: 33195792245783024}
   - component: {fileID: 23817696907727706}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_01_Wheel_rl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 4651779652245260}
   - component: {fileID: 33599888735952784}
   - component: {fileID: 23016365615397700}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Sweepo_01_Wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}

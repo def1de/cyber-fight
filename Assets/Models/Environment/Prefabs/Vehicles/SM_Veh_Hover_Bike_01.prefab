@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33540119479060190}
   - component: {fileID: 23393790556737476}
   - component: {fileID: 64271458179626322}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Hover_Bike_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 4331330997131450}
   - component: {fileID: 33002304230181088}
   - component: {fileID: 23161916435669164}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Hover_Bike_01_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 4646686100249508}
   - component: {fileID: 33103727269747812}
   - component: {fileID: 23731085733117884}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Hover_Bike_01_HandleBars
   m_TagString: Untagged
   m_Icon: {fileID: 0}

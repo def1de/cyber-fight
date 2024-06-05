@@ -8,7 +8,6 @@ public class playerAttack : MonoBehaviour
     public GameObject weapon; //weapon object
     private Animator animator; //weapon animator
     private Rigidbody rb; //player rigidbody
-    private playerMovement playerMovement; //movement script
 
     [Header("Block")]
     private bool isBlock;
@@ -24,7 +23,6 @@ public class playerAttack : MonoBehaviour
     {
         animator = weapon.GetComponent<Animator>();
         weaponController = weapon.GetComponent<katanaController>();
-        playerMovement = GetComponent<playerMovement>();
         rb = GetComponent<Rigidbody>();
     }
 

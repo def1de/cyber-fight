@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33967892238785232}
   - component: {fileID: 23699346082138962}
   - component: {fileID: 64736479889858400}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_Lights_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

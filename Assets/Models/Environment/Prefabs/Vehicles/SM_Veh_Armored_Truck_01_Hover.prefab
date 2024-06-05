@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4207621477937390}
   - component: {fileID: 33031261538425332}
   - component: {fileID: 23115469083186796}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_rr_01_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4306110089595844}
   - component: {fileID: 33508443935904826}
   - component: {fileID: 23123501015444692}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_fl_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,7 +178,7 @@ GameObject:
   - component: {fileID: 33287789336269848}
   - component: {fileID: 23196272173878786}
   - component: {fileID: 64239723431760262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 4352302787418886}
   - component: {fileID: 33884766023998294}
   - component: {fileID: 23173457604821306}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_rl_02_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 4091290963199464}
   - component: {fileID: 33390081242214836}
   - component: {fileID: 23132920710296406}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_rr_02_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 4171641849807184}
   - component: {fileID: 33117146691511904}
   - component: {fileID: 23258152618775804}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_SteeringW_01_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 4374504061467432}
   - component: {fileID: 33062477881031036}
   - component: {fileID: 23214640395675158}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Glass_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 4394971639995694}
   - component: {fileID: 33973298413788766}
   - component: {fileID: 23145882671620720}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_rl_01_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 4813327057769034}
   - component: {fileID: 33423365516787056}
   - component: {fileID: 23462488158463748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_fr_Hover
   m_TagString: Untagged
   m_Icon: {fileID: 0}

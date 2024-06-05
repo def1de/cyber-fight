@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33314200168223418}
   - component: {fileID: 23821987934847514}
   - component: {fileID: 64206356754910524}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Hoverboard_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}

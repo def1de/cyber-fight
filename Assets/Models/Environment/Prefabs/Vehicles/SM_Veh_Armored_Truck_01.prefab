@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 33608556367292236}
   - component: {fileID: 23891053813839084}
   - component: {fileID: 64077431275761140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 4330369263941332}
   - component: {fileID: 33690220916734282}
   - component: {fileID: 23580749427494844}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_rr_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   - component: {fileID: 4233304384348948}
   - component: {fileID: 33158673362538340}
   - component: {fileID: 23475738849707722}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_rr_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 4497031187327792}
   - component: {fileID: 33897924451984542}
   - component: {fileID: 23703503526958714}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_rl_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 4687828952705320}
   - component: {fileID: 33021591214036208}
   - component: {fileID: 23745680163247662}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_rl_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -449,7 +449,7 @@ GameObject:
   - component: {fileID: 4605640663501778}
   - component: {fileID: 33921750104858278}
   - component: {fileID: 23581714315222438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Glass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -532,7 +532,7 @@ GameObject:
   - component: {fileID: 4997233809722808}
   - component: {fileID: 33113306836863054}
   - component: {fileID: 23669096870036412}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_SteeringW_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -615,7 +615,7 @@ GameObject:
   - component: {fileID: 4780135659262178}
   - component: {fileID: 33201810508540142}
   - component: {fileID: 23469141399429490}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_fr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -698,7 +698,7 @@ GameObject:
   - component: {fileID: 4211539852126894}
   - component: {fileID: 33208521489188946}
   - component: {fileID: 23157477193888176}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SM_Veh_Armored_Truck_01_Wheel_fl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
