@@ -10,7 +10,10 @@ public class PlayerController : MonoBehaviour
     private float XRotation;
     private float YRotation;
     public float jumpCooldown;
+    public float dashCooldown;
+    public float dashForce;
     bool readyToJump = true;
+    bool readyToDash = true;
     [SerializeField] private Transform PlayerCamera;
     [SerializeField] private Rigidbody PlayerBody;
     [Space]
@@ -48,6 +51,18 @@ public class PlayerController : MonoBehaviour
             PlayerBody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift) && readyToDash)
+        {
+            readyToDash = false;
+            Debug.Log("Dash");
+            PlayerBody.AddForce(transform.forward * dashForce, ForceMode.Impulse);
+            Invoke(nameof(ResetDash), dashCooldown);
+        }
+    }
+
+    private void ResetDash()
+    {
+        readyToDash = true;
     }
 
     private void ResetJump()

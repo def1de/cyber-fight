@@ -13,7 +13,7 @@ public class playerAttack : MonoBehaviour
     private bool isBlock;
     private bool isBlockAvailable = true;
     private float blockCooldown = 5f;
-    public float knockbackForce = 4000f;
+    [SerializeField] private float knockbackForce = 4000f;
 
     [Header("Attack")]
     private bool isAttack;
@@ -44,11 +44,9 @@ public class playerAttack : MonoBehaviour
 
     private void Knockback(GameObject entity)
     {
-        Vector3 direction = transform.position - entity.transform.position;
-        direction.y = 0.1f;
-
-        rb.velocity = Vector3.zero;
-        rb.AddForce(direction.normalized * knockbackForce, ForceMode.Impulse);
+        Vector3 direction = entity.transform.position - this.transform.position;
+        direction.Normalize();
+        rb.AddForce(direction * knockbackForce);
     }
 
     public bool IsBlock()
