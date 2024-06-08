@@ -1,80 +1,92 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float playerHeight = 1f;
+    private bool doubleJump = true;
+    private bool dash = true;
+    private Vector3 velocity;
+    private float XRotation;
     private Vector3 PlayerMovementInput;
     private Vector2 PlayerMouseInput;
-    private float XRotation;
-    private float YRotation;
-    public float jumpCooldown;
-    public float dashCooldown;
-    public float dashForce;
-    bool readyToJump = true;
-    bool readyToDash = true;
+    private CharacterController Controller;
     [SerializeField] private Transform PlayerCamera;
-    [SerializeField] private Rigidbody PlayerBody;
     [Space]
-    [SerializeField] private float Speed;
-    [SerializeField] private float Sensitivity;
-    [SerializeField] private float JumpForce;
-
-    [Header("Ground Check")]
-    public LayerMask whatIsGround;
-    public bool grounded;
-
+    [Header("Movement Settings")]
+    [SerializeField] private float speed;
+    [SerializeField] private float jumpForce;
+    [SerializeField] private float sensitivity;
+    [SerializeField] private float gravity = -9.81f;
+    [Header("Dash Settings")]
+    [SerializeField] private float dashForce;
+    [SerializeField] private float dashCooldown;
     void Start()
     {
+        Controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
-    void FixedUpdate()
+    void Update()
     {
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight + 0.1f, whatIsGround);
         PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
         PlayerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
-        movePlayer();
+        MovePlayer();
         moveCamera();
     }
 
-    private void movePlayer()
+    private void MovePlayer()
     {
-        Vector3 moveVector = transform.TransformDirection(PlayerMovementInput) * Speed;
-        PlayerBody.velocity = new Vector3(moveVector.x, PlayerBody.velocity.y, moveVector.z);
-
-        if (Input.GetKeyDown(KeyCode.Space) && readyToJump && grounded)
+        // Movement
+        Vector3 MoveDirection = transform.TransformDirection(PlayerMovementInput);
+        // Jumping
+        if (Controller.isGrounded && Input.GetButtonDown("Jump"))
         {
-            PlayerBody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
-            Invoke(nameof(ResetJump), jumpCooldown);
+            doubleJump = true;
+            velocity.y = jumpForce;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift) && readyToDash)
+        else if (doubleJump && Input.GetButtonDown("Jump"))
         {
-            readyToDash = false;
-            Debug.Log("Dash");
-            PlayerBody.AddForce(transform.forward * dashForce, ForceMode.Impulse);
-            Invoke(nameof(ResetDash), dashCooldown);
+            doubleJump = false;
+            velocity.y = jumpForce;
         }
-    }
 
-    private void ResetDash()
-    {
-        readyToDash = true;
-    }
+        // Dash
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dash)
+        {
+            dash = false;
+            Vector3 dashDirection = transform.forward * dashForce * 10;
+            Invoke("ResetDash", dashCooldown);
+            Controller.Move(dashDirection * Time.deltaTime);
+        }
 
-    private void ResetJump()
-    {
-        readyToJump = true;
+        // Gravity
+        if (Controller.isGrounded && velocity.y < 0)
+        {
+            velocity.y = -1f;
+        }
+        else
+        {
+            velocity.y -= gravity * Time.deltaTime * -2f;
+        }
+
+        Controller.Move(MoveDirection * speed * Time.deltaTime);
+        Controller.Move(velocity * Time.deltaTime);
     }
 
     private void moveCamera()
     {
-        XRotation -= PlayerMouseInput.y * Sensitivity;
+        XRotation -= PlayerMouseInput.y * sensitivity;
 
-        transform.Rotate(0f, PlayerMouseInput.x * Sensitivity, 0f);
+        transform.Rotate(0f, PlayerMouseInput.x * sensitivity, 0f);
         PlayerCamera.localRotation = Quaternion.Euler(XRotation, 0f, 0f);
+    }
+
+    private void ResetDash()
+    {
+        dash = true;
     }
 }

@@ -7,13 +7,12 @@ public class playerAttack : MonoBehaviour
 {
     public GameObject weapon; //weapon object
     private Animator animator; //weapon animator
-    private Rigidbody rb; //player rigidbody
 
     [Header("Block")]
+    private CharacterController Controller;
     private bool isBlock;
     private bool isBlockAvailable = true;
     private float blockCooldown = 5f;
-    [SerializeField] private float knockbackForce = 4000f;
 
     [Header("Attack")]
     private bool isAttack;
@@ -21,9 +20,9 @@ public class playerAttack : MonoBehaviour
 
     private void Start()
     {
+        Controller = GetComponent<CharacterController>();
         animator = weapon.GetComponent<Animator>();
         weaponController = weapon.GetComponent<katanaController>();
-        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()
@@ -39,14 +38,6 @@ public class playerAttack : MonoBehaviour
     {
         isBlockAvailable = false;
         Invoke(nameof(ResetBlock), blockCooldown);
-        Knockback(enemy);
-    }
-
-    private void Knockback(GameObject entity)
-    {
-        Vector3 direction = entity.transform.position - this.transform.position;
-        direction.Normalize();
-        rb.AddForce(direction * knockbackForce);
     }
 
     public bool IsBlock()
