@@ -20,9 +20,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float sensitivity;
     [SerializeField] private float gravity = -9.81f;
-    [Header("Dash Settings")]
+    [Header("External Forces Settings")]
     [SerializeField] private float dashForce;
     [SerializeField] private float dashCooldown;
+    [SerializeField] private float knockbackForce;
+
     void Start()
     {
         Controller = GetComponent<CharacterController>();
@@ -88,5 +90,12 @@ public class PlayerController : MonoBehaviour
     private void ResetDash()
     {
         dash = true;
+    }
+    public void Knockback(GameObject entity)
+    {
+        Vector3 direction = this.transform.position - entity.transform.position;
+        direction.y = 0.1f;
+        direction.Normalize();
+        Controller.Move(direction * knockbackForce * 10 * Time.deltaTime);
     }
 }
