@@ -626,11 +626,11 @@ TextureImporter:
         serializedVersion: 2
         x: 65
         y: 33
-        width: 62
+        width: 54
         height: 30
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 8, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -662,6 +662,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Pixel Buttom_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 32
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 13, y: 0, z: 13, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38150d625fef67f4198d858c6982790b
+      internalID: 1878520553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -681,6 +702,7 @@ TextureImporter:
       Pixel Buttom_5: -455607715
       Pixel Buttom_7: 1636415790
       Pixel Buttom_14: 1360086504
+      Pixel Buttom_3: 1878520553
       Pixel Buttom_17: 1678805373
       Pixel Buttom_19: 1589363065
       Pixel Buttom_4: 2142862933
