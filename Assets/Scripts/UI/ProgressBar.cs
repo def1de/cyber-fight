@@ -6,9 +6,10 @@ using UnityEngine.UI;
 [ExecuteInEditMode()]
 public class ProgressBar : MonoBehaviour
 {
-    [SerializeField] private int maximum;
+    [SerializeField] private int maximum = 4;
     [SerializeField] private int current;
     [SerializeField] private Image mask;
+    [SerializeField] private GameObject enemies;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,8 @@ public class ProgressBar : MonoBehaviour
 
     void GetCurrnetFill()
     {
-        float fillAmount = (float)current / (float)maximum;
+        int enemyCount = GameObject.FindGameObjectsWithTag("Enemy").Length;
+        float fillAmount = (float)enemyCount / (float)maximum;
         mask.fillAmount = fillAmount;
     }
 }

@@ -54,11 +54,8 @@ public class enemyControl : MonoBehaviour
         target = player;
     }
 
-    void OnTriggerEnter(Collider other)
+    public void SetDead()
     {
-        if (other.gameObject.CompareTag("weapon"))
-        {
-            isDead = true;
-        }
+        isDead = true;
     }
 }
