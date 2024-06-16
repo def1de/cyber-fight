@@ -21,4 +21,13 @@ public class katanaController : MonoBehaviour
     {
         boxCollider.enabled = false;
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<enemyControl>().SetDead();
+            other.gameObject.tag = "Untagged";
+        }
+    }
 }
