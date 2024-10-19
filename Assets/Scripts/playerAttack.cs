@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class playerAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
+    private static readonly int IsBlockAnim = Animator.StringToHash("isBlock");
+    private static readonly int IsAttackAnim = Animator.StringToHash("isAttack");
     public GameObject weapon; //weapon object
     private Animator animator; //weapon animator
 
@@ -15,12 +17,12 @@ public class playerAttack : MonoBehaviour
 
     [Header("Attack")]
     private bool isAttack;
-    private katanaController weaponController;
+    private KatanaController weaponController;
 
     private void Start()
     {
         animator = weapon.GetComponent<Animator>();
-        weaponController = weapon.GetComponent<katanaController>();
+        weaponController = weapon.GetComponent<KatanaController>();
     }
 
     private void Update()
@@ -51,11 +53,11 @@ public class playerAttack : MonoBehaviour
 
     private void PlayBlockAnimation()
     {
-        animator.SetBool("isBlock", isBlock);
+        animator.SetBool(IsBlockAnim, isBlock);
     }
 
     private void PlayAttackAnimation()
     {
-        animator.SetBool("isAttack", isAttack);
+        animator.SetBool(IsAttackAnim, isAttack);
     }
 }

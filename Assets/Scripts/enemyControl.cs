@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class enemyControl : MonoBehaviour
+public class EnemyControl : MonoBehaviour
 {
     private Animator animator;
     private Rigidbody rb;

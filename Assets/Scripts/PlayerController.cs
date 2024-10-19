@@ -3,17 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class PlayerController : MonoBehaviour
 {
     private bool doubleJump = true;
     private bool dash = true;
     private Vector3 velocity;
-    private float XRotation;
-    private Vector3 PlayerMovementInput;
-    private Vector2 PlayerMouseInput;
-    private CharacterController Controller;
-    [SerializeField] private Transform PlayerCamera;
+    private float xRotation;
+    private Vector3 playerMovementInput;
+    private Vector2 playerMouseInput;
+    private CharacterController controller;
+    [FormerlySerializedAs("PlayerCamera")] [SerializeField] private Transform playerCamera;
     [Space]
     [Header("Movement Settings")]
     [SerializeField] private float speed;
@@ -27,25 +28,25 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        Controller = GetComponent<CharacterController>();
+        controller = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
     void Update()
     {
-        PlayerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        PlayerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+        playerMovementInput = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
+        playerMouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
 
         MovePlayer();
-        moveCamera();
+        MoveCamera();
     }
 
     private void MovePlayer()
     {
         // Movement
-        Vector3 MoveDirection = transform.TransformDirection(PlayerMovementInput);
+        Vector3 moveDirection = transform.TransformDirection(playerMovementInput);
         // Jumping
-        if (Controller.isGrounded && Input.GetButtonDown("Jump"))
+        if (controller.isGrounded && Input.GetButtonDown("Jump"))
         {
             doubleJump = true;
             velocity.y = jumpForce;
@@ -62,11 +63,11 @@ public class PlayerController : MonoBehaviour
             dash = false;
             Vector3 dashDirection = transform.forward * dashForce * 10;
             Invoke("ResetDash", dashCooldown);
-            Controller.Move(dashDirection * Time.deltaTime);
+            controller.Move(dashDirection * Time.deltaTime);
         }
 
         // Gravity
-        if (Controller.isGrounded && velocity.y < 0)
+        if (controller.isGrounded && velocity.y < 0)
         {
             velocity.y = -1f;
         }
@@ -75,16 +76,16 @@ public class PlayerController : MonoBehaviour
             velocity.y -= gravity * Time.deltaTime * -2f;
         }
 
-        Controller.Move(MoveDirection * speed * Time.deltaTime);
-        Controller.Move(velocity * Time.deltaTime);
+        controller.Move(moveDirection * speed * Time.deltaTime);
+        controller.Move(velocity * Time.deltaTime);
     }
 
-    private void moveCamera()
+    private void MoveCamera()
     {
-        XRotation -= PlayerMouseInput.y * sensitivity;
+        xRotation -= playerMouseInput.y * sensitivity;
 
-        transform.Rotate(0f, PlayerMouseInput.x * sensitivity, 0f);
-        PlayerCamera.localRotation = Quaternion.Euler(XRotation, 0f, 0f);
+        transform.Rotate(0f, playerMouseInput.x * sensitivity, 0f);
+        playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 
     private void ResetDash()
@@ -96,6 +97,6 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = this.transform.position - entity.transform.position;
         direction.y = 0.1f;
         direction.Normalize();
-        Controller.Move(direction * knockbackForce * 10 * Time.deltaTime);
+        controller.Move(direction * knockbackForce * 10 * Time.deltaTime);
     }
 }

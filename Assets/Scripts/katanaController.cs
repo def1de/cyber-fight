@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class katanaController : MonoBehaviour
+public class KatanaController : MonoBehaviour
 {
     private BoxCollider boxCollider;
 
@@ -26,7 +26,7 @@ public class katanaController : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<enemyControl>().SetDead();
+            other.gameObject.GetComponent<EnemyControl>().SetDead();
             other.gameObject.tag = "Untagged";
         }
     }

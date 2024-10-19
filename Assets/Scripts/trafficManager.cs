@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trafficManager : MonoBehaviour
+public class TrafficManager : MonoBehaviour
 {
     public int direction = 1;
     public GameObject[] trafficCars;
@@ -18,7 +18,7 @@ public class trafficManager : MonoBehaviour
 
         GameObject car = Instantiate(trafficCars[carIndex], transform.position, Quaternion.identity);
 
-        car.GetComponent<trafficCar>().direction = direction;
+        car.GetComponent<TrafficCar>().direction = direction;
         if (direction == -1)
         {
             car.transform.Rotate(0f, 180f, 0f);

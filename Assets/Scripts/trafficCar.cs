@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class trafficCar : MonoBehaviour
+public class TrafficCar : MonoBehaviour
 {
     private float speed = 10;
     private float despawnDistance = 150f;

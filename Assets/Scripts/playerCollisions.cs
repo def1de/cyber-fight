@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class playerCollisions : MonoBehaviour
+public class PlayerCollisions : MonoBehaviour
 {
-    private playerAttack playerAttack;
+    private PlayerAttack playerAttack;
 
     private void Start()
     {
-        playerAttack = GetComponent<playerAttack>();
+        playerAttack = GetComponent<PlayerAttack>();
     }
 
     public void EnemyTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<enemyControl>().SetTarget(transform);
+            other.gameObject.GetComponent<EnemyControl>().SetTarget(transform);
         }
     }
 
@@ -24,7 +24,7 @@ public class playerCollisions : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
-            other.gameObject.GetComponent<enemyControl>().SetTarget(null);
+            other.gameObject.GetComponent<EnemyControl>().SetTarget(null);
         }
     }
 
